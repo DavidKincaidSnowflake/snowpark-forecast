@@ -1,0 +1,17 @@
+snowsql_config_path = "~/.snowsql/config"
+snowsql_connection_name = "demo"
+
+[default]
+input_parameters = "(dates array, vals array, periods number)"
+return_type = "variant"
+file = "app.zip"
+name = "forecast"
+handler = "forecast_udf.forecast"
+execute_as_caller = true
+
+[dev]
+database = "SNOWPARK"
+schema = "FORECAST"
+warehouse = "DATA_SCIENCE"
+role = "SYSADMIN"
+overwrite = true

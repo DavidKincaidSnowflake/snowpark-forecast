@@ -1,0 +1,17 @@
+snowsql_config_path = "~/.snowsql/config"
+snowsql_connection_name = "demo"
+
+[default]
+input_parameters = "(id string, x float, y date, periods number)"
+return_type = "table(id string, y float, d string)"
+file = "app.zip"
+name = "forecast_daily"
+handler = "forecast_udtf.forecast"
+execute_as_caller = true
+
+[dev]
+database = "SNOWPARK"
+schema = "FORECAST"
+warehouse = "DATA_SCIENCE"
+role = "SYSADMIN"
+overwrite = true
